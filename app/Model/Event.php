@@ -31,4 +31,21 @@ class Event extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public $actsAs = array(
+    'Upload.Upload' => array(
+      'image' => array(
+        'fields' => array(
+          'dir' => 'dir'
+        ),
+      'thumbnailSizes' => array(
+          'xvga' => '1024x768',
+          'vga' => '149x178',
+          'thumb' => '128x128',
+          'icon' => '82x82'          
+        ),
+        'thumbnailMethod' => 'php'
+      )
+    )
+  );
 }

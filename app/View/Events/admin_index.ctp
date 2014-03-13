@@ -5,6 +5,7 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
 			<th><?php echo $this->Paginator->sort('category_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('date'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
 			<th><?php echo $this->Paginator->sort('image'); ?></th>
 			<th><?php echo $this->Paginator->sort('dir'); ?></th>
@@ -21,6 +22,7 @@
 		<td>
 			<?php echo $this->Html->link($event['Category']['name'], array('controller' => 'categories', 'action' => 'view', $event['Category']['id'])); ?>
 		</td>
+		<td><?php echo h($event['Event']['date']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['image']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['dir']); ?>&nbsp;</td>

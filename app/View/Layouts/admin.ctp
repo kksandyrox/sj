@@ -31,22 +31,39 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 		echo $this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap');
-
+		echo $this->Html->css('ui-lightness/jquery-ui-1.10.3.custom');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-		echo $this->fetch('script');
+	?>
+	<?php
+		 echo $this->Html->script('jquery'); 
+		 echo $this->Html->script('jqueryui'); 
+		 echo $this->Html->script('jquerypicker');
+		 echo $this->Html->script('date'); 		 
+		 echo $this->fetch('script');
 	?>
 </head>
+<style>
+	body {
+		padding-top: 60px;
+		padding-bottom: 60px;overflow-y: auto;
+	}
+</style>
 <body>
-<div class = "navbar navbar-inverse navbar-static-top">
-	<div class = "container">
+<div class = "navbar navbar-inverse navbar-fixed-top">
+
 		<div class = "row">
-			<div class = "col-md-4 navbar-brand">SPORTS</div>
-			<div class = "col-md-4 pull-right navbar-link"><?php echo $this->Html->link(__('Admin'), array('controller' => 'users', 'action' => 'login', 'admin' => false))?></div>
+			<div class = "col-md-offset-1 col-md-4 navbar-brand">SPORTS</div>
+			
+			<div class = "col-md-4 pull-right"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout', 'admin' => false))?>
+			</div>
 		</div>
-	</div>
+
 </div>
-	<div id="container">
+	<div class="container-fluid">
+		<h1>
+			Welcome to admin panel
+		</h1>
 
 		<div id="content">
 
