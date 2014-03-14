@@ -1,5 +1,5 @@
 <div class = "container">
-	<ul>
+	<ul class ="list-unstyled">
 		<li>
 			<?php 
 				echo $this->Html->link(__('Create new categories'), array('controller' => 'categories', 'action' => 'admin_add'));

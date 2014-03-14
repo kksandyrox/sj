@@ -34,13 +34,13 @@ class EventsController extends AppController {
  * @param string $id
  * @return void
  */
-	// public function view($id = null) {
-	// 	if (!$this->Event->exists($id)) {
-	// 		throw new NotFoundException(__('Invalid event'));
-	// 	}
-	// 	$options = array('conditions' => array('Event.' . $this->Event->primaryKey => $id));
-	// 	$this->set('event', $this->Event->find('first', $options));
-	// }
+	public function view($id = null) {
+		if (!$this->Event->exists($id)) {
+			throw new NotFoundException(__('Invalid event'));
+		}
+		$options = array('conditions' => array('Event.' . $this->Event->primaryKey => $id));
+		$this->set('event', $this->Event->find('first', $options));
+	}
 
 /**
  * add method

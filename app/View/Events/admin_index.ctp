@@ -1,6 +1,10 @@
-<div class="events index">
+<div class="container-fluid">
+	<div class = "row">
+		<div class = "col-md-offset-10">
+			<?php echo $this->Html->link(__('Add New Event'), array('action' => 'add'), array('class' => 'btn btn-success')); ?>
+		</div>
 	<h2><?php echo __('Events'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class = "table table-striped" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
@@ -8,7 +12,6 @@
 			<th><?php echo $this->Paginator->sort('date'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
 			<th><?php echo $this->Paginator->sort('image'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir'); ?></th>
 			<th><?php echo $this->Paginator->sort('result'); ?></th>
 			<th><?php echo $this->Paginator->sort('is_enabled'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
@@ -24,16 +27,16 @@
 		</td>
 		<td><?php echo h($event['Event']['date']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['image']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['dir']); ?>&nbsp;</td>
+
+		 <td>     	<?php echo $this->Html->image("{$event['Event']['dir']}/icon_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/')); ?> </td>
 		<td><?php echo h($event['Event']['result']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['is_enabled']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['created']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['modified']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $event['Event']['id']), null, __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?>
+		<td>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id']), array('class' => 'btn btn-primary')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id']), array('class' => 'btn btn-warning')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $event['Event']['id']), array('class' => 'btn btn-danger'), null, __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -52,11 +55,4 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Event'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
