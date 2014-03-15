@@ -139,7 +139,6 @@ class EventsController extends AppController {
  * @return void
  */
 	public function admin_add() {
-		$this->layout = 'admin';
 		if ($this->request->is('post')) {
 			$this->Event->create();
 			if ($this->Event->save($this->request->data)) {

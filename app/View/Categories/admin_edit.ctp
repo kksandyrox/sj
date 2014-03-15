@@ -1,21 +1,23 @@
-<div class="categories form">
-<?php echo $this->Form->create('Category'); ?>
-	<fieldset>
-		<legend><?php echo __('Admin Edit Category'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('name');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<div class="container">	
+	<div class = "row">
+		<div class = "col-md-2">
+		<span class = "glyphicon glyphicon-chevron-left"></span>
+			<?php echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn btn-success'));?>
+		</div>
+	</div>
+	<?php echo $this->Form->create('Category'); ?>
+	<div class = "row">
+		<div class = "col-md-4">
+<!-- 			<div class = 'input-group input-group-lg'> -->
+				<h4 class = "left-margin" ><?php echo __('Admin Edit Category');?></h4>
+				<?php
+				echo $this->Form->input('id', array('class' => 'form-control'));
+				echo $this->Form->input('name', array('class' => 'form-control'));
+				?>
+				<?php echo $this->Form->button('Submit', array('class' => 'btn btn-primary left-margin')); ?>
+				<?php echo $this->Form->end();?>
+<!-- 			</div>
+ -->		</div>
+	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Category.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Category.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add')); ?> </li>
-	</ul>
-</div>

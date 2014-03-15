@@ -1,66 +1,42 @@
-<div class="events view">
-<h2><?php echo __('Event'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Name'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['name']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Category'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($event['Category']['name'], array('controller' => 'categories', 'action' => 'view', $event['Category']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Description'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['description']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Image'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['image']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Dir'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['dir']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Result'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['result']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Is Enabled'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['is_enabled']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($event['Event']['modified']); ?>
-			&nbsp;
-		</dd>
-	</dl>
+<div class ="container">
+	<div class = "row">
+		<div class = "col-md-2">
+			<span class = "glyphicon glyphicon-chevron-left"></span>
+			<?php echo $this->Html->link(__('Back'), array('controller' => 'events', 'action' => 'index'), array('class' => 'btn btn-success'));?>
+		</div>
+	</div> <br />
+<div class = "panel panel-primary">
+<div class = "panel-heading"><?php echo $event['Event']['name'];?></div>
+<div class = "panel-body">
+		<?php echo $this->Html->image('http://placehold.it/450x250'); ?> 
+<h4>Description</h4>
+<p><?php echo $event['Event']['description'];?></p>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Event'), array('action' => 'edit', $event['Event']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Event'), array('action' => 'delete', $event['Event']['id']), null, __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Events'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Event'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-	</ul>
+
+
+	<table class ="table">
+		<tr>
+			<th><?php echo __('Id') ?></th>
+			<th><?php echo __('Name'); ?></th>
+			<th><?php echo __('Category'); ?></th>
+			<th><?php echo __('Date'); ?></th>
+			<th><?php echo __('is_enabled'); ?></th>
+			<th><?php echo __('Result'); ?></th>
+			<th><?php echo __('Created'); ?></th>
+			<th><?php echo __('Modified'); ?></th>
+		</tr>
+		<tr>
+			<td><?php echo $event['Event']['id'];?></td>
+			<td><?php echo $event['Event']['name'];?></td>
+			<td><?php echo $event['Category']['name'];?></td>
+			<td><?php echo $event['Event']['date'];?></td>
+			<td><?php echo $event['Event']['is_enabled'];?></td>
+			<td><?php echo $event['Event']['result'];?></td>
+			<td><?php echo $event['Event']['created'];?></td>
+			<td><?php echo $event['Event']['modified'];?></td>
+		</tr>
+	</table>
+
+</div>
+
 </div>

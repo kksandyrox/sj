@@ -1,6 +1,11 @@
 <div class="container-fluid">
 <div class = "row">
+	<div class = "col-md-2">
+		<span class = "glyphicon glyphicon-chevron-left"></span>
+		<?php echo $this->Html->link(__('Back'), array('controller' => 'users', 'action' => 'controls', 'admin' => false), array('class' => 'btn btn-success'));?>
+	</div>
 	<div class = "col-md-offset-10">
+		<span class = "glyphicon glyphicon-plus"></span>
 		<?php echo $this->Html->link(__('Add New Category'), array('action' => 'add'), array('class' => 'btn btn-success')); ?>
 	</div>
 </div>
@@ -22,7 +27,7 @@
 		<td>
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $category['Category']['id']), array('class' => 'btn btn-primary')); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $category['Category']['id']), array('class' => 'btn btn-warning')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $category['Category']['id']), array('class' => 'btn btn-danger'), null, __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $category['Category']['id']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
