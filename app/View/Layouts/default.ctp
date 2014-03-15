@@ -31,10 +31,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+		echo $this->Html->css('custom');
 		echo $this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap');
 		echo $this->Html->css('ui-lightness/jquery-ui-1.10.3.custom');	
-		echo $this->Html->css('custom');
 		echo $this->Html->css('nivo-slider');
 		echo $this->Html->script('jquery'); 
 		echo $this->Html->script('jqueryui'); 
@@ -55,16 +55,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 	</div>
 </div>
-	<div id="container">
 
-		<div id="content">
+
+		<div id="content" class = "bg-image">
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
 
-	</div>
 
 </body>
 </html>
