@@ -45,7 +45,7 @@ class UsersController extends AppController {
 	}
 
 	public function controls() {
-		$this->layout = 'admin';
+		//$this->layout = 'admin';
 	}
 
 	// public function sandeep($data) {
