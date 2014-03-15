@@ -8,7 +8,7 @@
 	<div class = "row">
 		<div class = "col-md-offset-3 col-md-6">
 			<div class = "panel panel-primary">
-				<div class = "panel-heading"> Admin Add Category</div>
+				<div class = "panel-heading"> Admin Edit Category</div>
 				<div class = "panel-body">
 					<?php echo $this->Form->create('Category'); ?>
 					<?php

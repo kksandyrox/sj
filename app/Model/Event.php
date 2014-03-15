@@ -40,6 +40,7 @@ class Event extends AppModel {
         ),
       'thumbnailSizes' => array(
           'xvga' => '1024x768',
+          'dis' => '420x250',
           'vga' => '149x178',
           'thumb' => '128x128',
           'icon' => '82x82'          
@@ -48,4 +49,13 @@ class Event extends AppModel {
       )
     )
   );
+
+  public function featuredEvents() {
+    return $this->find('all', array(
+      'conditions' => array(
+        'is_enabled' => 1
+        )
+      )
+    );
+  }
 }

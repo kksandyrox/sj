@@ -8,7 +8,7 @@
 <div class = "panel panel-primary">
 <div class = "panel-heading"><?php echo $event['Event']['name'];?></div>
 <div class = "panel-body">
-		<?php echo $this->Html->image('http://placehold.it/450x250'); ?> 
+		<?php echo $this->Html->image("{$event['Event']['dir']}/dis_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/')); ?> 
 <h4>Description</h4>
 <p><?php echo $event['Event']['description'];?></p>
 </div>

@@ -26,7 +26,7 @@
 		<td><?php echo h($event['Event']['id']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['name']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($event['Category']['name'], array('controller' => 'categories', 'action' => 'view', $event['Category']['id'])); ?>
+			<?php echo __($event['Category']['name']); ?>
 		</td>
 		<td><?php echo h($event['Event']['date']); ?>&nbsp;</td>
 
