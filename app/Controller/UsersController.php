@@ -14,19 +14,27 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session', 'Auth');
-/**
+	public $components = array('Paginator', 'Session');
+	/**
  * index method
  *
  * @return void
  */
+	public function beforeFilter() {
+    parent::beforeFilter();
+    if (!empty($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
+    	$this->redirect(array('controller' => 'users', 'action' => 'login', 'admin' => false));	
+    	}
+    }
+
 	public function login() {
 		if($this->request->is('post')) {
 			if($this->Auth->login()) {
-				return $this->redirect(array('controller' => 'users', 'action' => 'controls', 'admin' => true));
+				return $this->redirect(array('controller' => 'users', 'action' => 'controls'));
 			}
 			else  {
 				$this->Session->setFlash(__('Invalid username or password'));
+				$this->redirect(array('action' => 'index', 'admin' => false));
 			}
 		}
 	}
@@ -36,7 +44,7 @@ class UsersController extends AppController {
 		return $this->redirect(array('controller' => 'users', 'action' => 'login'));
 	}
 
-	public function admin_controls() {
+	public function controls() {
 		$this->layout = 'admin';
 	}
 
@@ -207,4 +215,6 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('The user could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+  }
+
