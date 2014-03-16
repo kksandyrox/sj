@@ -45,22 +45,16 @@
 	?>
 </head>
 <body>
-<!-- <div class = "navbar navbar-inverse navbar-static-top">
-	<div class = "container">
-		<div class = "row">
-			<div class = "col-md-4 navbar-brand">SPORTS</div>
-			<div class = "col-md-4 pull-right navbar-link"><?php echo $this->Html->link(__('Admin'), array('controller' => 'users', 'action' => 'login', 'admin' => false))?></div>
-		</div>
-	</div>
-</div> -->
 
 <nav class="navbar navbar-inverse" role="navigation">
-	<ul class = "list-unstyled">
-		<li><a class="navbar-brand" href="#">Brand</a></li>
-<!-- 		<li class = "pull-right"><button type="button" class="btn btn-default navbar-btn">Admin Login</button></li> -->
-<li class = "pull-right"><?php echo $this->Html->link(__('Admin Login'), array('controller' => 'users', 'action' => 'login', 'admin' => false), array('type' => 'button', 'class' => 'btn btn-default navbar-btn'));?></li>
-	</ul>
-	>
+<div class = "container">
+<div class= "row"> 
+		<?php if(AuthComponent::user('id') != null):?>
+		<div class = "col-md-3"><?php echo $this->Form->label(null, 'Logged in as '.AuthComponent::user('username'), array('class' => 'admin-login-label'));?></div>
+		<div class = "col-md-offset-8 col-md-1"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout', 'admin' => false), array('type' => 'button', 'class' => 'btn btn-success navbar-btn'));?></div>
+		 <?php endif;?>
+	</div>
+	</div>
 </nav>
 <div id="content">
 	<?php echo $this->Session->flash(); ?>

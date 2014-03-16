@@ -19,7 +19,7 @@
 		<div class = "col-md-4 banner-small-pics">
 		 <?php 
 
-		 echo $this->Html->link($this->Html->image('http://placehold.it/220x150'), array('controller' => 'events', 'action' => 'view', $all_event['Event']['id']), array('escape' => false));
+		 echo $this->Html->link($this->Html->image('http://placehold.it/220x150', array('class' => 'img-circle')), array('controller' => 'events', 'action' => 'view', $all_event['Event']['id']), array('escape' => false));
 
 		 // echo $this->Html->image("{$all_event['Event']['dir']}/icon_{$all_event['Event']['image']}", array('pathPrefix' => 'files/event/image/'));	?>
 		</div>

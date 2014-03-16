@@ -10,6 +10,15 @@
 	margin-top: 20px;
 }
 
+.admin-login-label {
+  margin-top: 13px;
+  color: white;
+}
+
+.li-inline {
+  display: inline;
+}
+
 
 /*body {
 	background: url(../img/sports.jpg) no-repeat fixed; 
