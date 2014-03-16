@@ -5,10 +5,15 @@ body {
   -o-background-size: cover;
   background-size: cover;
   height: 100%;
+  padding-bottom: 20px;
 }
 
 .shadow {
 	-moz-box-shadow: 0 0 5px 5px #888;
 	-webkit-box-shadow: 0 0 5px 5px#888;
 	box-shadow: 0 0 10px 10px #888;
+}
+
+.banner-small-pics {
+  margin-top: 30px;
 }

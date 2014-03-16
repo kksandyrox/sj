@@ -8,3 +8,11 @@ $(window).load(function() {
     	controlNav: false
     });
 });
+
+$(document).ready(function(){
+  $("img").hover(function(){
+    $(this).addClass("shadow");
+    },function(){
+    $(this).removeClass("shadow");
+  });
+});

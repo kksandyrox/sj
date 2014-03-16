@@ -208,7 +208,8 @@ class EventsController extends AppController {
 		$this->layout = 'no-admin';
 		$this->Event->recursive = -1;
 		$datas = $this->Event->featuredEvents();
-		$this->set(compact('datas'));
+		$all_events = $this->Event->findAllEvents();
+		$this->set(compact('datas', 'all_events'));
 	}
 
 }
