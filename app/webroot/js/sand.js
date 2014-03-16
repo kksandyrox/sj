@@ -5,5 +5,6 @@ $(window).load(function() {
     	prevText: '<span class = "glyphicon glyphicon-chevron-left"</span>',
     	nextText: '<span class = "glyphicon glyphicon-chevron-right"</span>',
     	pauseOnHover: false,
+    	controlNav: false
     });
 });

@@ -28,7 +28,7 @@ class UsersController extends AppController {
     }
 
 	public function login() {
-		if($this->request->is('post')) {
+		if($this->request->is('post') && AuthComponent::user('id') == null) {
 			if($this->Auth->login()) {
 				return $this->redirect(array('controller' => 'users', 'action' => 'controls'));
 			}

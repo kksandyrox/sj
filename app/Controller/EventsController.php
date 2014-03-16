@@ -205,6 +205,7 @@ class EventsController extends AppController {
 	}
 
 	public function banner() {
+		$this->layout = 'no-admin';
 		$this->Event->recursive = -1;
 		$datas = $this->Event->featuredEvents();
 		$this->set(compact('datas'));
