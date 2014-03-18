@@ -1,4 +1,10 @@
 <div class="container">
+	<div class = "row">
+		<div class = "col-md-2">
+			<span class = "glyphicon glyphicon-chevron-left"></span>
+			<?php echo $this->Html->link(__('Back'), $this->request->referer(), array('class' => 'btn btn-success'));?>
+		</div>
+	</div>
 	<h2><?php echo __('Events'); ?></h2>
 	<table class = "table table-striped" cellpadding="0" cellspacing="0">
 	<tr>
@@ -15,10 +21,10 @@
 		<td><?php echo h($event['Event']['id']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['name']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($event['Category']['name'], array('controller' => 'categories', 'action' => 'view', $event['Category']['id'])); ?>
+			<?php echo $event['Category']['name']; ?>
 		</td>
 		<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
-		<td>     	<?php echo $this->Html->image("{$event['Event']['dir']}/icon_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/')); ?> </td>
+		<td>     	<?php echo $this->Html->image("{$event['Event']['dir']}/icon_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/', 'class' => 'img-circle')); ?> </td>
 		<td><?php echo h($event['Event']['result']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>

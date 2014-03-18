@@ -15,7 +15,28 @@ class Event extends AppModel {
 	public $displayField = 'name';
 
 
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
+	//The Associations below have been created with all possible keys, thoegse that are not needed can be removed
+
+
+
+  public $validate = array(
+    'name' => array(
+        'rule' => 'notEmpty'
+        ),
+    'category_id' => array(
+      'rule' => 'notEmpty'
+      ),
+    'description' => array(
+      'rule' => 'notEmpty'
+      ),
+    'date' => array(
+      'rule' => 'notEmpty'
+      ),
+    'result' => array(
+      'rule' => 'notEmpty'
+      )
+    );
+
 
 /**
  * belongsTo associations

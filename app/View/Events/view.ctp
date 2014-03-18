@@ -1,8 +1,12 @@
 <div class ="container">
 	<div class = "row">
-		<div class = "col-md-2">
+<!-- 		<div class = "col-md-2">
 			<span class = "glyphicon glyphicon-chevron-left"></span>
-			<?php echo $this->Html->link(__('Back'), array('controller' => 'events', 'action' => 'index'), array('class' => 'btn btn-success'));?>
+			<?php echo $this->Html->link(__('Back'), $this->request->referer(), array('class' => 'btn btn-success'));?>
+		</div> -->
+		<div class = "col-md-offset-10">
+			<span class = "glyphicon glyphicon-eye-open"></span>
+			<?php echo $this->Html->link(__('View all events'), array('action' => 'index'), array('class' => 'btn btn-success')); ?>
 		</div>
 	</div> <br />
 	<div class = "row">
@@ -10,7 +14,7 @@
 			<div class = "panel panel-primary">
 				<div class = "panel-heading"><?php echo $event['Event']['name'];?></div>
 				<div class = "panel-body">
-					<?php echo $this->Html->image('http://placehold.it/420x250'); ?> 
+					<?php echo $this->Html->image("{$event['Event']['dir']}/dis_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/')); ?> 
 					<h4>Description</h4>
 					<p><?php echo $event['Event']['description'];?></p>
 				</div>

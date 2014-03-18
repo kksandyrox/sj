@@ -1,4 +1,4 @@
-<div class="container">
+
 	<div class = "row">
 		<div class = "col-md-2">
 			<span class = "glyphicon glyphicon-chevron-left"></span>
@@ -54,5 +54,5 @@
 		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
-</div>
+
 

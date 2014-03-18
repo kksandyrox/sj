@@ -14,6 +14,19 @@ class Category extends AppModel {
  */
 	public $displayField = 'name';
 
+public $validate = array(
+    'name' => array(
+        'notEmpty' => array(
+            'rule' => 'notEmpty',
+            // extra keys like on, required, etc. go here...
+        ),
+        'isUnique' => array(
+            'rule' => 'isUnique',
+            // extra keys like on, required, etc. go here...
+        )
+    )
+);
+
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

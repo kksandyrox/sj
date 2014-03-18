@@ -17,3 +17,11 @@ body {
 .banner-small-pics {
   margin-top: 30px;
 }
+
+.form-group-top {
+  margin-top: 10px;
+}
+
+.form-group-bottom {
+  margin-bottom: 10px;
+}
