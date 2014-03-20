@@ -28,9 +28,16 @@
 		<td>
 			<?php echo __($event['Category']['name']); ?>
 		</td>
-		<td><?php echo h($event['Event']['date']); ?>&nbsp;</td>
+		<td><?php echo h(date('F d, Y', strtotime($event['Event']['date']))); ?>&nbsp;</td>
 
-		 <td>     	<?php echo $this->Html->image("{$event['Event']['dir']}/icon_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/', 'class' => 'img-circle')); ?> </td>
+		 <td>
+		 <?php if(!empty($event['Event']['image'])):?>
+		 <?php echo $this->Html->image("{$event['Event']['dir']}/icon_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/', 'class' => 'img-circle')); ?> 
+		<?php else :?>
+			<?php echo $this->Html->image("http://placehold.it/82x82", array('class' => 'img-circle'));?>
+		<?php endif;?>
+
+		 </td>
 		<td><?php echo h($event['Event']['result']); ?>&nbsp;</td>
 		<?php if($event['Event']['is_enabled'] == 1):?>
 		<td><?php echo h($event['Event']['is_enabled']); ?>&nbsp;</td>

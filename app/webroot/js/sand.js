@@ -12,8 +12,22 @@ $(window).load(function() {
 $(document).ready(function(){
   $("img").hover(function(){
     $(this).addClass("shadow");
+    // $(this).tooltip({
+    //     placement:'left',
+    //     title:'View',
+    //     trigger:'hover'
+    // })
     },function(){
     $(this).removeClass("shadow");
   });
 });
 
+        $(function() {
+            $("img").tooltip({
+
+                placement:'bottom',
+                title:'Click for details',
+                trigger:'hover'
+            })
+           
+        });

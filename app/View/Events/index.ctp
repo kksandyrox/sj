@@ -29,12 +29,17 @@
 	<tr>
 		<td><?php echo h($event['Event']['id']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['name']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['date']); ?>&nbsp;</td>
+		<td><?php echo h(date('F d, Y', strtotime($event['Event']['date']))); ?>&nbsp;</td>
 		<td>
 			<?php echo $event['Category']['name']; ?>
 		</td>
 		<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
-		<td>     	<?php echo $this->Html->image("{$event['Event']['dir']}/icon_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/', 'class' => 'img-circle')); ?> </td>
+		<td>		 <?php if(!empty($event['Event']['image'])):?>
+		 <?php echo $this->Html->image("{$event['Event']['dir']}/icon_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/', 'class' => 'img-circle')); ?> 
+		<?php else :?>
+			<?php echo $this->Html->image("http://placehold.it/82x82", array('class' => 'img-circle'));?>
+		<?php endif;?> 
+		</td>
 		<td><?php echo h($event['Event']['result']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>

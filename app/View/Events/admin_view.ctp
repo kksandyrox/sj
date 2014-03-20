@@ -8,7 +8,16 @@
 <div class = "panel panel-primary">
 <div class = "panel-heading"><?php echo $event['Event']['name'];?></div>
 <div class = "panel-body">
+
+<?php if(!empty($event['Event']['image'])):?>
 		<?php echo $this->Html->image("{$event['Event']['dir']}/dis_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/')); ?> 
+	<?php else:?>
+		<?php echo $this->Html->image("http://placehold.it/420x250");?>
+	<?php endif;?>
+
+
+
+
 <h4>Description</h4>
 <p><?php echo $event['Event']['description'];?></p>
 </div>
@@ -29,7 +38,7 @@
 		<td><?php echo $event['Event']['id'];?></td>
 		<td><?php echo $event['Event']['name'];?></td>
 		<td><?php echo $event['Category']['name'];?></td>
-		<td><?php echo $event['Event']['date'];?></td>
+						<td><?php echo h(date('F d,  Y', strtotime($event['Event']['date'])));?></td>
 		<?php if($event['Event']['is_enabled'] == 1) :?>
 			<td><?php echo $event['Event']['is_enabled'];?></td>
 		<?php else :?>

@@ -47,7 +47,7 @@ public function index() {
 				$this->set(compact('events'));
 			}
 			else {
-				$this->Session->setFlash('No records found');
+				$this->Session->setFlash('No records found for "'.$this->request->data['Event']['keyword'].'"');
 				$this->set(compact('events'));
 			}
 		}
