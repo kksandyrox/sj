@@ -33,6 +33,7 @@
 		echo $this->Html->css('bootstrap');
 		echo $this->Html->css('ui-lightness/jquery-ui-1.10.3.custom');	
 		echo $this->Html->css('custom');
+		
 		echo $this->Html->css('nivo-slider');
 		echo $this->fetch('script');
 		echo $this->Html->script('jquery'); 
@@ -41,7 +42,6 @@
 		echo $this->Html->script('date'); 		 
 		echo $this->Html->script('bootstrap'); 	
 		echo $this->Html->script('disqus');	 
-		echo $this->Html->script('sand');	 
 	?>
 </head>
 <body>

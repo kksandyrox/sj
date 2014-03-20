@@ -51,4 +51,26 @@ public $validate = array(
 		)
 	);
 
+	public function findByCategory($data) {
+		$this->recursive = 1;
+		return $this->find('all', array(
+			'conditions' => array(
+				'name' => $data
+				)
+			)
+		);
+	}
+
+	public function findId($data) {
+		return $this->find('all', array(
+			'conditions' => array(
+				'name' => $data
+				),
+			'fields' => array(
+				'Category.id'
+				)
+			)
+		);
+	}
+
 }

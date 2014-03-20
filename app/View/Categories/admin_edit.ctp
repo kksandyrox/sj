@@ -2,7 +2,7 @@
 	<div class = "row">
 		<div class = "col-md-2">
 			<span class = "glyphicon glyphicon-chevron-left"></span>
-			<?php echo $this->Html->link(__('Back'), array('controller' => 'users', 'action' => 'controls', 'admin' => false), array('class' => 'btn btn-success'));?>
+			<?php echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn btn-success'));?>
 		</div>
 	</div>
 	<div class = "row">

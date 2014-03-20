@@ -32,7 +32,12 @@
 
 		 <td>     	<?php echo $this->Html->image("{$event['Event']['dir']}/icon_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/', 'class' => 'img-circle')); ?> </td>
 		<td><?php echo h($event['Event']['result']); ?>&nbsp;</td>
+		<?php if($event['Event']['is_enabled'] == 1):?>
 		<td><?php echo h($event['Event']['is_enabled']); ?>&nbsp;</td>
+	<?php else:?>
+		<?php $event['Event']['is_enabled'] = 0 ;?>
+		<td><?php echo h($event['Event']['is_enabled']); ?>&nbsp;</td>
+	<?php endif;?>
 		<td>
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id']), array('class' => 'btn btn-primary bottom-margin')); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id']), array('class' => 'btn btn-warning bottom-margin')); ?>

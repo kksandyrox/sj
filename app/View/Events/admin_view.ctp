@@ -14,29 +14,32 @@
 </div>
 
 
-	<table class ="table">
-		<tr>
-			<th><?php echo __('Id') ?></th>
-			<th><?php echo __('Name'); ?></th>
-			<th><?php echo __('Category'); ?></th>
-			<th><?php echo __('Date'); ?></th>
-			<th><?php echo __('is_enabled'); ?></th>
-			<th><?php echo __('Result'); ?></th>
-			<th><?php echo __('Created'); ?></th>
-			<th><?php echo __('Modified'); ?></th>
-		</tr>
-		<tr>
-			<td><?php echo $event['Event']['id'];?></td>
-			<td><?php echo $event['Event']['name'];?></td>
-			<td><?php echo $event['Category']['name'];?></td>
-			<td><?php echo $event['Event']['date'];?></td>
+<table class ="table">
+	<tr>
+		<th><?php echo __('Id') ?></th>
+		<th><?php echo __('Name'); ?></th>
+		<th><?php echo __('Category'); ?></th>
+		<th><?php echo __('Date'); ?></th>
+		<th><?php echo __('is_enabled'); ?></th>
+		<th><?php echo __('Result'); ?></th>
+		<th><?php echo __('Created'); ?></th>
+		<th><?php echo __('Modified'); ?></th>
+	</tr>
+	<tr>
+		<td><?php echo $event['Event']['id'];?></td>
+		<td><?php echo $event['Event']['name'];?></td>
+		<td><?php echo $event['Category']['name'];?></td>
+		<td><?php echo $event['Event']['date'];?></td>
+		<?php if($event['Event']['is_enabled'] == 1) :?>
 			<td><?php echo $event['Event']['is_enabled'];?></td>
-			<td><?php echo $event['Event']['result'];?></td>
-			<td><?php echo $event['Event']['created'];?></td>
-			<td><?php echo $event['Event']['modified'];?></td>
-		</tr>
-	</table>
-
+		<?php else :?>
+			<?php $event['Event']['is_enabled'] = 0;?>
+			<td><?php echo $event['Event']['is_enabled'];?></td>
+		<?php endif;?>
+		<td><?php echo $event['Event']['result'];?></td>
+		<td><?php echo $event['Event']['created'];?></td>
+		<td><?php echo $event['Event']['modified'];?></td>
+	</tr>
+</table>
 </div>
-
 </div>

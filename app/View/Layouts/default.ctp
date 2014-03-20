@@ -41,7 +41,6 @@
 		echo $this->Html->script('date'); 		 
 		echo $this->Html->script('bootstrap'); 	
 		echo $this->Html->script('disqus');	 
-		echo $this->Html->script('sand');	 
 	?>
 </head>
 <body>

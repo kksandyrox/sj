@@ -25,3 +25,7 @@ body {
 .form-group-bottom {
   margin-bottom: 10px;
 }
+
+.extra-effects {
+margin: 0 15px 12px 15px;
+}

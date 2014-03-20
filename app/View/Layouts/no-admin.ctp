@@ -34,7 +34,17 @@
 	</nav>
 
 	<div id="content">
-		<?php echo $this->Session->flash(); ?>
+	<div class = "row">
+		<div class = "col-md-offset-4 col-md-4">
+						<?php if ($this->Session->check('Message.flash')): ?>
+	            <div class="alert alert-info extra-effects">
+	              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	              <?php echo $this->Session->flash(); ?>
+	            </div>
+	      	<?php endif; ?>	
+		</div>
+	</div>
+
 		<?php echo $this->fetch('content'); ?>
 	</div>
 </body>

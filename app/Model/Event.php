@@ -84,4 +84,24 @@ class Event extends AppModel {
   public function findAllEvents() {
     return $this->find('all');
   }
+
+  
+
+  public function findByCatId($data2) {
+    return $this->find('all', array(
+      'conditions' => array(
+        'Event.category_id' => $data2
+        )
+      )
+    );
+  }
+
+  public function findByDate($data3) {
+    return $this->find('all', array(
+      'conditions' => array(
+        'date(Event.date)' => $data3
+        )
+      )
+    );
+  }
 }

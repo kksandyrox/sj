@@ -1,8 +1,16 @@
 <div class="container">
 	<div class = "row">
-		<div class = "col-md-2">
+<!-- 		<div class = "col-md-2">
 			<span class = "glyphicon glyphicon-chevron-left"></span>
 			<?php echo $this->Html->link(__('Back'), $this->request->referer(), array('class' => 'btn btn-success'));?>
+		</div> -->
+		<div class = "col-md-offset-7 col-md-4">
+			<?php echo $this->Form->create('Event');?>
+			<?php echo $this->Form->input('keyword', array('class' => 'form-control', 'label' => false, 'placeholder' => 'Enter Category or Date (yyyy-mm-dd)'));?>
+		</div>
+		<div class = "col-md-1">
+			<?php echo $this->Form->button('Search', array('class' => 'btn btn-success search-margin'));?>
+			<?php echo $this->Form->end();?>
 		</div>
 	</div>
 	<h2><?php echo __('Events'); ?></h2>

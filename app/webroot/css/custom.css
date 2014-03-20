@@ -29,3 +29,12 @@
   height: 100%;
   /*background-color: red;*/
 }*/
+
+
+.search-margin-top {
+  margin-top: -7px;
+}
+
+.search-margin {
+  margin-top: 7px;
+}

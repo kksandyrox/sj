@@ -27,11 +27,35 @@ class EventsController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->layout = 'front-end';
-		$this->Event->recursive = 0;
-		$this->set('events', $this->Paginator->paginate());
+public function index() {
+	$this->layout = 'front-end';
+	$events = $this->Paginator->paginate();
+	$this->set(compact('events'));
+	if($this->request->is('post')) {
+		if(!empty($this->request->data['Event']['keyword'])){
+			$x = $this->Event->Category->findId($this->request->data['Event']['keyword']);
+			$byDate = $this->Event->findByDate($this->request->data['Event']['keyword']);
+			if(!empty($x)) {
+				$y = $this->Event->findByCatId($x[0]['Category']['id']);
+				unset($events);
+				$events = $y;
+				$this->set(compact('events'));
+			}
+			else if(!empty($byDate)){
+				unset($events);
+				$events = $byDate;
+				$this->set(compact('events'));
+			}
+			else {
+				$this->Session->setFlash('No records found');
+				$this->set(compact('events'));
+			}
+		}
+		else {
+			$this->Session->setFlash('Search box empty! Please enter a keyword.');
+		}
 	}
+}
 
 /**
  * view method
