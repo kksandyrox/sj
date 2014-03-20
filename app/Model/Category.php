@@ -22,6 +22,7 @@ public $validate = array(
         ),
         'isUnique' => array(
             'rule' => 'isUnique',
+            'message' => 'Category already exists!'
             // extra keys like on, required, etc. go here...
         )
     )

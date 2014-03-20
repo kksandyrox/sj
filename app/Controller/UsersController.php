@@ -49,10 +49,6 @@ class UsersController extends AppController {
 		//$this->layout = 'admin';
 	}
 
-	// public function sandeep($data) {
-	// 	$this->redirect($this->referer());
-	// }
-
 	public function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());
