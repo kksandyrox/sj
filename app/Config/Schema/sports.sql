@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2014 at 08:36 PM
+-- Generation Time: Mar 21, 2014 at 03:21 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -33,22 +33,20 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `name` varchar(40) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`),
+  KEY `id_2` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `created`, `modified`) VALUES
-(3, 'Football again bitch', '2014-03-15 09:42:04', '2014-03-15 18:04:12'),
-(4, 'Cricket', '2014-03-15 09:42:15', '2014-03-15 09:42:15'),
-(5, 'Basketball', '2014-03-15 09:42:26', '2014-03-15 09:42:26'),
-(6, 'Rugby', '2014-03-15 13:07:36', '2014-03-15 13:07:36'),
-(7, '', '2014-03-15 13:23:26', '2014-03-15 13:23:26'),
-(8, 'Metallica', '2014-03-15 13:24:24', '2014-03-15 13:24:24'),
-(9, 'FootballMegadeth12345', '2014-03-15 13:26:27', '2014-03-15 13:31:07'),
-(10, 'Fdp', '2014-03-15 13:26:43', '2014-03-15 13:28:01');
+(1, 'Cricket', '2014-03-18 10:07:42', '2014-03-21 01:00:05'),
+(2, 'Football', '2014-03-18 10:14:28', '2014-03-18 10:14:28'),
+(3, 'Baseball', '2014-03-18 10:21:57', '2014-03-18 10:21:57'),
+(6, 'Tennis', '2014-03-21 01:23:29', '2014-03-21 01:23:29');
 
 -- --------------------------------------------------------
 
@@ -68,18 +66,21 @@ CREATE TABLE IF NOT EXISTS `events` (
   `is_enabled` tinyint(1) DEFAULT '0',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  UNIQUE KEY `id_2` (`id`),
+  KEY `id` (`id`),
+  KEY `category_id` (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `name`, `category_id`, `date`, `description`, `image`, `dir`, `result`, `is_enabled`, `created`, `modified`) VALUES
-(2, 'sa', 1, NULL, 'sad', '91068056.png', '2', 'sda', 0, '2014-03-13 20:11:55', '2014-03-13 20:11:55'),
-(3, 'world cup', 1, '2014-05-31', 'waka waka', '922268_511608032239245_552497876_o.jpg', '3', '', 0, '2014-03-13 21:22:05', '2014-03-13 21:22:05'),
-(4, 'Asia Cup', 4, '2014-03-28', 'asia cup is a cricket tournament. But you suck', '91068056.png', '4', 'Sri Lanke WOn', 1, '2014-03-14 18:01:49', '2014-03-15 09:43:09'),
-(5, 'Sandeep Kumar', 8, '2014-03-31', 'EVENTOFY is an Android application that will turn an event into a powerful networking platform (a common platform for Communication e.g. social media) where everyone attending the event can communicate with each other. It will keep everyone informed, enabled, and engaged before, during, and after the event.', 'Koala.jpg', '5', 'Good Concert', 1, '2014-03-15 18:31:00', '2014-03-15 18:40:23');
+(1, 'England India ODI', 1, '2014-03-25', 'Match between England and India. A must win game for India.', 'cricket_l_14.jpg', '1', 'India won comfortably', 1, '2014-03-18 10:09:51', '2014-03-21 01:12:33'),
+(2, 'Video game', 1, '2014-03-20', 'This is a video game dude', 'video game.jpg', '2', 'India won again', 0, '2014-03-18 10:13:17', '2014-03-21 01:36:28'),
+(3, 'Champions league', 2, '2014-03-19', 'This a champions league football game. I dont like football, but doesn''t matter.', 'Football_iu_1996.jpg', '3', 'A brilliant goal by Gerrard.', 1, '2014-03-18 10:16:25', '2014-03-18 10:16:25'),
+(4, 'Chicago rivals vs Bulls', 3, '2014-03-25', 'This is a baseball match, I have no much idea about baseball, but it is good for testing.', 'BAseball-hit.jpg', '4', 'It ended in a draw', 1, '2014-03-18 10:22:52', '2014-03-21 01:40:54'),
+(11, 'IPL 7', 1, '2014-05-07', 'starts in may', '', '', 'Mumbai Indians win', 0, '2014-03-20 23:58:28', '2014-03-21 01:40:43');
 
 -- --------------------------------------------------------
 
@@ -102,6 +103,16 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `created`, `modified`) VALUES
 (1, 'sandeep', '0b44e38113a03a073e8e5f9386c29b9868c99376', '2014-03-13 22:21:25', '2014-03-13 22:21:25');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `events`
+--
+ALTER TABLE `events`
+  ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
