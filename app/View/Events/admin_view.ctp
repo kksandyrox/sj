@@ -10,7 +10,7 @@
 <div class = "panel-body">
 
 <?php if(!empty($event['Event']['image'])):?>
-		<?php echo $this->Html->image("{$event['Event']['dir']}/dis_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/')); ?> 
+		<?php echo $this->Html->image("{$event['Event']['dir']}/dis_{$event['Event']['image']}", array('pathPrefix' => 'files/event/image/', 'class' => 'img-responsive')); ?> 
 	<?php else:?>
 		<?php echo $this->Html->image("http://placehold.it/420x250");?>
 	<?php endif;?>
