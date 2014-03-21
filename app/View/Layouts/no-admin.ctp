@@ -25,7 +25,7 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 	<div class ="container">
 		<ul class = "list-unstyled">
-			<li><a class="navbar-brand" href="#">SPORTS WEBSITE</a></li>
+			<li><a class="navbar-brand" href="/sj/">SPORTS WEBSITE</a></li>
 			<?php if($this->request->params['action'] == 'banner'):?>
 			<li class = "navbar-right"><?php echo $this->Html->link(__('Admin Login'), array('controller' => 'users', 'action' => 'login', 'admin' => false), array('type' => 'button', 'class' => 'btn btn-success navbar-btn'));?></li>
 		<?php endif;?>
