@@ -1,7 +1,7 @@
 $(window).load(function() {
     $('#slider').nivoSlider({
     	effect : 'fade',
-    	pauseTime : 1500,
+    	pauseTime : 3000,
     	prevText: '<span class = "glyphicon glyphicon-chevron-left"</span>',
     	nextText: '<span class = "glyphicon glyphicon-chevron-right"</span>',
     	pauseOnHover: false,
@@ -22,12 +22,12 @@ $(document).ready(function(){
   });
 });
 
-        $(function() {
-            $("img").tooltip({
+$(function() {
+    $("img").tooltip({
 
-                placement:'bottom',
-                title:'Click for details',
-                trigger:'hover'
-            })
-           
-        });
+        placement:'bottom',
+        title:'Click for details',
+        trigger:'hover'
+    })
+   
+});
