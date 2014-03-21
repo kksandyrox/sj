@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created`, `modified`) VALUES
-(1, 'sandeep', '0b44e38113a03a073e8e5f9386c29b9868c99376', '2014-03-13 22:21:25', '2014-03-13 22:21:25');
+(1, 'sandeep', '7f4ff2b9927e366356e59b6e799e17b83ed15aed', '2014-03-13 22:21:25', '2014-03-13 22:21:25');
 
 --
 -- Constraints for dumped tables
